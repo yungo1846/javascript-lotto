@@ -1,5 +1,4 @@
 /* eslint-disable max-lines-per-function */
-
 export const $ = (() => {
   const constructor = function (selector, parentNode) {
     if (!selector) {

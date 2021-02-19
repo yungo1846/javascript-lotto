@@ -9,6 +9,7 @@ export class LottoController {
   }
 
   initEvent() {
+<<<<<<< HEAD
     this.$purchaseAmountSubmit = $('#purchase-amount-submit');
     this.$lottoToggle = $('.lotto-numbers-toggle-button');
 
@@ -22,6 +23,21 @@ export class LottoController {
   handlePurchaseAmountInput() {
     this.$purchaseAmountInput = $('#purchase-amount-input');
     const money = Number(this.$purchaseAmountInput.getValue());
+=======
+    $('#purchase-amount-submit').setEvent(
+      'click',
+      this.handlePurchaseAmountInput.bind(this)
+    );
+    $('.lotto-numbers-toggle-button').setEvent(
+      'click',
+      this.handleLottoToggle.bind(this)
+    );
+  }
+
+  handlePurchaseAmountInput() {
+    const $input = $('#purchase-amount-input');
+    const money = Number($input.getValue());
+>>>>>>> 25016aa... refactor: refactoring
     const alertMessage = validator.purchaseAmountInput(money);
 
     if (alertMessage) {
@@ -32,8 +48,13 @@ export class LottoController {
 
     this.machine.publishLottosByAuto(money);
     this.view.renderLottoSection(this.machine.lottos);
+<<<<<<< HEAD
     this.$purchaseAmountInput.disable();
     this.$purchaseAmountSubmit.disable();
+=======
+    $input.disable();
+    $('#purchase-amount-submit').disable();
+>>>>>>> 25016aa... refactor: refactoring
   }
 
   handleInputException($input, alertMessage) {
@@ -42,6 +63,7 @@ export class LottoController {
   }
 
   handleLottoToggle() {
+<<<<<<< HEAD
     this.$lottoContainer = $('#lotto-container');
     this.$lottoNumbers = $('.lotto-numbers');
 
@@ -49,5 +71,13 @@ export class LottoController {
     $('.lotto-numbers-toggle-button').isCheckedInput()
       ? this.$lottoNumbers.show()
       : this.$lottoNumbers.hide();
+=======
+    const $lottoNumbers = $('.lotto-numbers');
+
+    $('#lotto-container').toggleClass('flex-col'); // toggle()을 이용해 flex direction 변경.
+    $('.lotto-numbers-toggle-button').isCheckedInput()
+      ? $lottoNumbers.show()
+      : $lottoNumbers.hide();
+>>>>>>> 25016aa... refactor: refactoring
   }
 }

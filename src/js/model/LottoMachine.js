@@ -23,7 +23,6 @@ export class LottoMachine {
 
   publishLottosByAuto() {
     const count = this.#insertedMoney / UNIT_AMOUNT;
-
     for (let i = 0; i < count; i++) {
       const numbers = this.getRandomLottoNumbers();
 

@@ -45,7 +45,7 @@ describe('Lotto test', () => {
       }
     }
   });
-
+  
   it('부적절한 당첨 번호를 검사한다. (중복)', () => {
     testWinnigNumbers(['1', '2', '3', '4', '5', '5', '45'], MSG_OVERLAPPED_LOTTO_NUMBERS);
   });

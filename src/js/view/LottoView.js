@@ -18,6 +18,7 @@ export class LottoView {
           <div class="lotto-wrapper d-flex items-start">
             <span class="lotto mx-1 text-4xl">🎟️ </span>
             <span data-lotto-numbers=${idx} class="mx-1 text-2xl d-none">
+
               ${lotto.numbers.join(', ')}
             </span>
           </div>
